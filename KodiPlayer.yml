@@ -1,23 +1,26 @@
 alias: Kodi 95%
 description: ""
-trigger:
-  - platform: state
-    entity_id:
+triggers:
+  - entity_id:
       - media_player.android
-condition: []
-action:
+    trigger: state
+conditions: []
+actions:
   - variables:
       ninety_five_percent_time: >
-        {% set duration = state_attr('media_player.android', 'media_duration') | float %}
-        {% set position = state_attr('media_player.android','media_position') | float %}
-        {% set updated_at =state_attr('media_player.android','media_position_updated_at') %}
-        {% if duration > 0 and position is defined and updated_at is defined %}
+        {% set duration = state_attr('media_player.android', 'media_duration') |
+        float %} {% set position =
+        state_attr('media_player.android','media_position') | float %} {% set
+        updated_at
+        =state_attr('media_player.android','media_position_updated_at') %} {% if
+        duration > 0 and position is defined and updated_at is defined %}
           {{ (updated_at.timestamp() + (duration * 0.95)) }}
         {% endif %}
       stop_at: >
         {% if ninety_five_percent_time is defined %}
 
-        {% set position = state_attr('media_player.android','media_position') | float %}
+        {% set position = state_attr('media_player.android','media_position') |
+        float %}
           {{ ninety_five_percent_time - position if position is defined else ninety_five_percent_time }}
         {% endif %}
   - condition: template
@@ -32,12 +35,27 @@ action:
       until:
         - condition: template
           value_template: >-
-            {{ as_timestamp(now()) >= stop_at if stop_at is defined else false }}
+            {{ as_timestamp(now()) >= stop_at if stop_at is defined else false
+            }}
   - condition: state
     entity_id: media_player.android
     state: playing
-  - service: scene.turn_on
-    target:
-      entity_id: scene.kino_abspann
-    metadata: {}
+  - action: script.ashley_s_light_fader
+    data:
+      lampBrightnessScale: zeroToOneHundred
+      easingTypeInput: auto
+      endBrightnessPercent: 100
+      endBrightnessEntityScale: zeroToOneHundred
+      autoCancelThreshold: 10
+      shouldStopIfTheLampIsTurnedOffDuringTheFade: true
+      shouldResetTheStopEntityToOffAtStart: false
+      shouldInvertTheValueOfTheStopEntity: false
+      minimumStepDelayInMilliseconds: 100
+      shouldTryToUseNativeLampTransitionsToo: false
+      isDebugMode: false
+      light: light.zimmer_hinten_kino
+      transitionTime:
+        hours: 0
+        minutes: 3
+        seconds: 0
 mode: restart
