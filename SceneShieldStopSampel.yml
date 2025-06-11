@@ -1,0 +1,160 @@
+id: "1734778689828"
+name: Shield Stop
+entities:
+  light.zimmer_1:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: brightness
+    brightness: 128
+    friendly_name: Zimmer 1
+    supported_features: 44
+    state: "on"
+  light.zimmer_2:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: brightness
+    brightness: 128
+    friendly_name: Zimmer 2
+    supported_features: 44
+    state: "on"
+  light.flur_1:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: brightness
+    brightness: 102
+    friendly_name: Flur 1
+    supported_features: 44
+    state: "on"
+  light.flur_2:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: null
+    brightness: null
+    friendly_name: Flur 2
+    supported_features: 44
+    state: "off"
+  light.flur_3:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: null
+    brightness: null
+    friendly_name: Flur 3
+    supported_features: 44
+    state: "off"
+  light.bad:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: brightness
+    brightness: 128
+    friendly_name: Bad
+    supported_features: 44
+    state: "on"
+  light.kuche_1:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: brightness
+    brightness: 128
+    friendly_name: Küche 1
+    supported_features: 44
+    state: "on"
+  light.kuche_2:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: brightness
+    brightness: 128
+    friendly_name: Küche 2
+    supported_features: 44
+    state: "on"
+  light.zimmer_3:
+    effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+    supported_color_modes:
+      - brightness
+    effect: null
+    color_mode: null
+    brightness: null
+    friendly_name: Zimmer 3
+    supported_features: 44
+    state: "off"
+  select.wled_wiedergabeliste:
+    options: []
+    friendly_name: WLED Playlist
+    state: unavailable
+  select.wled_voreinstellung:
+    options:
+      - "OFF"
+      - Strobe
+      - WHITE
+      - WHITE 0
+    friendly_name: WLED Preset
+    state: "OFF"
+metadata: {}
