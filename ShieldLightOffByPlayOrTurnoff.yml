@@ -1,0 +1,29 @@
+alias: Alles aus wenn shield aus oder Spielt
+description: ""
+triggers:
+  - device_id: 139ce2c6d9ff11dba1f8f056a86d26c7
+    domain: media_player
+    entity_id: ed3e3592d817d1fe20a49a49dca83ceb
+    type: turned_off
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 2
+  - device_id: a75745c19f7777b9f8b3085a457108eb
+    domain: media_player
+    entity_id: fc69a3ddc7d337387d62b4141dd897d1
+    type: playing
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 2
+conditions: []
+actions:
+  - action: scene.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: scene.alles_aus
+mode: single
